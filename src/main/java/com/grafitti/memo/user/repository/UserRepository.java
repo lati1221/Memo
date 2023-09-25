@@ -11,6 +11,6 @@ import com.grafitti.memo.user.domain.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 	
 	// WHERE `loginId` = ?? AND `password` == ??;
-	public Optional<User> findByLoginIdAndPassword(String loginId, String password); 
+		public Optional<User> findByLoginIdAndPassword(String loginId, String password);
 
-}
+	}

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.grafitti.memo.common.EncryptUtils;
+import com.grafitti.memo.post.domain.Post;
 import com.grafitti.memo.user.domain.User;
 import com.grafitti.memo.user.repository.UserRepository;
 
@@ -42,5 +43,6 @@ public class UserService {
 		
 		return userRepository.save(user);
 	}
+	
 
 }
