@@ -15,14 +15,16 @@
 <div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		<section class="contents d-flex justify-content-center">
-			<div class="input-box my-5">
-				<input type="text" placeholder="아이디" class="form-control mt-4" id="loginIdInput">
-				<input type="password" placeholder="비밀번호" class="form-control mt-2" id="passwordInput">
-				<button type="button" class="btn btn-secondary btn-block mt-3" id="loginBtn">로그인</button>
-				<div class="text-center mt-3">
-					<a href="/user/join-view">회원가입</a>
+				<div class="input-box my-5">
+					<form id="loginForm">
+						<input type="text" placeholder="아이디" class="form-control mt-4" id="loginIdInput">
+						<input type="password" placeholder="비밀번호" class="form-control mt-2" id="passwordInput">
+						<button type="submit" class="btn btn-secondary btn-block mt-3" id="loginBtn">로그인</button>
+					</form>
+					<div class="text-center mt-3">
+						<a href="/user/join-view">회원가입</a>
+					</div>
 				</div>
-			</div>
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 </div>
@@ -34,13 +36,15 @@
 <script>
 	$(document).ready(function() {
 		
-		$("#loginBtn").on("click", function() {
+		// $("#loginBtn").on("click", function() {
+		$("#loginForm").on("submit", function(e) {
+			
 			let loginId = $("#loginIdInput").val();
 			let password = $("#passwordInput").val();
 			
 			if(loginId == "") {
 				alert("아이디를 입력하세요");
-				return;
+				return;s
 			}
 			
 			if(password == "") {

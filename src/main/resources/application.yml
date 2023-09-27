@@ -28,7 +28,7 @@ spring:
         format_sql: true   
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/memo230918
+    url: jdbc:mysql://localhost:3306/memo
     username: root
     password: root
   mvc:
@@ -36,3 +36,7 @@ spring:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB

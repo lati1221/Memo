@@ -36,7 +36,7 @@ public class FileManager {
 		
 		File directory = new File(directoryPath);
 		
-		if(directory.mkdir()) {
+		if(!directory.mkdir()) {
 			// 디렉토리 생성 실패
 			
 			return null;

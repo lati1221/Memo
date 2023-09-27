@@ -45,4 +45,21 @@
 	
 	</select>
 	
+	<select id="selectPost" parameterType="int"
+	resultType="com.grafitti.memo.post.domain.Post">
+		SELECT 
+			`id`
+			, `userId`
+			, `title`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+		FROM 
+			`post`
+		WHERE 
+			`id` = #{id}
+	
+	</select>
+	
 </mapper>

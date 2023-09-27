@@ -12,7 +12,9 @@
 </head>
 <body>
 
-<div id="wrap">
+<body>
+
+	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		<section class="contents d-flex justify-content-center">
 			<div class="post-layout my-5">
@@ -34,17 +36,18 @@
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+	
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
 	<script>
 		$(document).ready(function() {
 			$("#saveBtn").on("click", function() {
 				let title = $("#titleInput").val();
 				let content = $("#contentInput").val();
 				
-				let file = $("#fileInput")[0];
+ 				let file = $("#fileInput")[0]; 
 				
 				if(title == "") {
 					alert("제목을 입력하세요");
@@ -56,7 +59,7 @@
 					return ;
 				}
 				
-				// {"title":title, "content":content, }
+				//{"title":title, "content":content, }
 				
 				let formData = new FormData();
 				formData.append("title", title);
@@ -66,10 +69,10 @@
 				$.ajax({
 					type:"post"
 					, url:"/post/create"
-					, data: formData
-					, enctype: "multipart/form-data" // 파일 업로드 필수 옵션
-					, processData:false // 파일 업로드 필수 옵션
-					, contentType:false // 파일 업로드 필수 옵션
+					, data:formData
+					, enctype:"multipart/form-data"  // 파일 업로드 필수 옵션
+					, processData:false  // 파일 업로드 필수 옵션
+					, contentType:false   // 파일 업로드 필수 옵션
 					, success:function(data) {
 						if(data.result == "success") {
 							location.href = "/post/list-view";
@@ -89,7 +92,6 @@
 		});
 	
 	</script>
-
 
 </body>
 </html>

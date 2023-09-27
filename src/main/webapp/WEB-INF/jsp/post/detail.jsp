@@ -17,22 +17,22 @@
 		<section class="contents d-flex justify-content-center">
 			<div class="post-layout my-5">
 				
-				<h1 class="text-center">메모 입력</h1>
+				<h1 class="text-center">메모 보기</h1>
 				
 				<div class="d-flex mt-3">
 					<label class="col-2">제목 : </label>
-					<input type="text" class="form-control col-10" id="titleInput" value="메모 샘플">
+					<input type="text" class="form-control col-10" id="titleInput" value="${post.title }">
 				</div>
 				<textarea class="form-control mt-3" rows="7" id="contentInput">${post.content }</textarea>
-				
-				<img width="100%" src="${post.imagePath }">
+			
+				<img width="50%" src="${post.imagePath }">
 				
 				<div class="d-flex justify-content-between mt-3">
 					<div>
 						<a href="/post/list-view" class="btn btn-secondary">목록으로</a>
-						<button type="button" class="btn btn-danger">삭제</button>
+						<button type="button" class="btn btn-danger" id="deleteBtn">삭제</button>
 					</div>
-					<button type="button" class="btn btn-secondary" id="saveBtn">저장</button>
+					<button type="button" class="btn btn-secondary" id="updateBtn">수정</button>
 				</div>
 				
 			</div>
@@ -42,6 +42,51 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script>
+		$(document).ready(function () {
+			$("#deleteBtn").on("click", function() {
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			});
+					
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		});
+		
+	
+	
+	
+	
+	
+	
+	</script>
+
+
+
+
+
+
 
 </body>
 </html>
