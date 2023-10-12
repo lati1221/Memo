@@ -64,17 +64,53 @@ public class FileManager {
 		// 파일경로 : D:\\ByungJeLee\\springProject\\upload\\memo/2_09123091/test.png
 		// 경로 규칙: /images/2_09123091/test.png
 		
-		return "/images" + directoryName + "/" + file.getOriginalFilename();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		return "/images" + directoryName + "/" + file.getOriginalFilename();	
 	}
+	
+	public static boolean removeFile(String filePath) {  // /images/2_09123091/test.png
+		
+		if(filePath == null) {
+			return false;
+		}
+		
+		// 이미지 파일 경로에서 /images 제거후
+		// upload 경로를 이어 붙여 준다.
+		String fullFilePath = FILE_UPLOAD_PATH + filePath.replace("/images", "");
+	
+		Path path = Paths.get(fullFilePath);
+		
+		// 파일이 존재하는지
+		if(Files.exists(path)) {
+			
+			try {
+				Files.delete(path);
+			} catch (IOException e) {
+				e.printStackTrace();
+				
+				return false;
+			}
+		}
+		
+		Path dirPath = path.getParent();
+		
+		// 디렉토리가 존재하는지
+		if(Files.exists(dirPath)) {
+			
+			try {
+				Files.delete(dirPath);
+			} catch (IOException e) {
+				e.printStackTrace();
+				
+				return false;
+			}
+			
+		}
+
+	
+	return true;
+	
+	}
+	
+	
 
 }

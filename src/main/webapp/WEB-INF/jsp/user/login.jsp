@@ -39,6 +39,8 @@
 		// $("#loginBtn").on("click", function() {
 		$("#loginForm").on("submit", function(e) {
 			
+			e.preventDefault();
+			
 			let loginId = $("#loginIdInput").val();
 			let password = $("#passwordInput").val();
 			
