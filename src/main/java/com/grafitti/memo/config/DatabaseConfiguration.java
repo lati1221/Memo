@@ -16,7 +16,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 public class DatabaseConfiguration {
 
 	  @Bean
-	    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+	  		SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
 	        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
 	        sessionFactory.setDataSource(dataSource);
 
